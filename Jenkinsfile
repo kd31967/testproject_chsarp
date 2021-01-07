@@ -40,7 +40,7 @@ pipeline{
     
     post {
         always{
-            archiveArtifacts artifacts: 'TestResults/**/*.html', fingerprint: true
+            archiveArtifacts artifacts: 'TestResults/**/index.html', fingerprint: true
             publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'TestResults', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
         }
     }
