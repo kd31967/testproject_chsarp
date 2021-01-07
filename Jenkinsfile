@@ -23,7 +23,7 @@ pipeline{
         stage ('Build'){
             steps {
                 
-                bat "\"${tool 'MSBUILD_14'}\" -verbosity:detailed WebServiceAutomation.sln /p:Configuration=Release /p:Platform=\"Any CPU\""
+                bat "\"${tool 'MSBUILD_2019'}\" -verbosity:detailed WebServiceAutomation.sln /p:Configuration=Release /p:Platform=\"Any CPU\""
             }
         }
         stage ('Deploy'){
