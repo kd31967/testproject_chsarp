@@ -9,13 +9,15 @@ pipeline{
         }
         stage ('Git CheckOut'){
             steps {
-                git branch: 'feature/newversion', url: 'https://github.com/rahulrathore44/RestSharpFramework.git'    
+                //git branch: 'feature/newversion', url: 'https://github.com/rahulrathore44/RestSharpFramework.git' 
+				git 'https://github.com/kd31967/testproject_chsarp.git'
+				
             }
             
         }
         stage ('Restore Packages'){
             steps {
-                bat 'C:\\Data\\JenkinsWar\\nuget.exe restore WebServiceAutomation.sln'
+                bat 'H:\\DOTNET\\dotnetall\\NuGet.exe restore WebServiceAutomation.sln'
             }
         }
         stage ('Build'){
